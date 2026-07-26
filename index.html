@@ -11,22 +11,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap"
       rel="stylesheet">
     <style>
   :root{
     --navy:#0F2438;
     --navy-2:#173350;
-    --gold:#C6982F;
-    --gold-soft:#E8C878;
+    --gold:#B8860B;
+    --gold-soft:#D4A574;
     --teal:#2E6C64;
     --teal-soft:#DCEAE6;
-    --ivory:#FAF6EE;
-    --ivory-2:#F2EBDC;
+    --ivory:#F9FAFB;
+    --ivory-2:#F3F4F6;
     --ink:#1B1F23;
-    --muted:#5C6672;
+    --muted:#6B7280;
     --rose:#C98A6B;
-    --line:rgba(15,36,56,0.12);
+    --line:rgba(15,36,56,0.10);
     --radius:18px;
     --shadow: 0 20px 50px -25px rgba(15,36,56,0.35);
     --maxw:1160px;
@@ -45,7 +45,7 @@
     -webkit-font-smoothing:antialiased;
   }
   h1,h2,h3,.display{
-    font-family:'Fraunces',serif;
+    font-family:'Geist',sans-serif;
     font-weight:600;
     letter-spacing:-0.01em;
     margin:0;
@@ -81,8 +81,8 @@
     transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
   }
   .btn:focus-visible{outline:3px solid var(--gold-soft); outline-offset:2px;}
-  .btn-primary{background:var(--teal);color:#fff;box-shadow:0 14px 30px -12px rgba(46,108,100,0.6);}
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 18px 36px -12px rgba(46,108,100,0.7);}
+  .btn-primary{background:var(--teal);color:#fff;box-shadow:0 10px 24px -8px rgba(46,108,100,0.5);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 32px -8px rgba(46,108,100,0.6);}
   .btn-ghost{background:transparent;color:var(--navy);border-color:var(--line);}
   .btn-ghost:hover{border-color:var(--navy);}
   .btn-light{background:#fff;color:var(--navy);}
@@ -98,7 +98,7 @@
   .nav{position:relative;display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:var(--maxw);margin:0 auto;gap:12px;}
   .brand{display:flex;align-items:center;gap:10px;text-decoration:none;}
   .brand-mark{width:38px;height:38px;flex:none;object-fit:contain;}
-  .brand-word{font-family:'Fraunces',serif;font-weight:600;font-size:19px;color:var(--navy);line-height:1;}
+  .brand-word{font-family:'Geist',sans-serif;font-weight:600;font-size:19px;color:var(--navy);line-height:1;}
   .brand-word span{display:block;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.12em;color:var(--teal);font-weight:500;margin-top:3px;}
   .nav-links{display:flex;gap:30px;list-style:none;padding:0;margin:0;font-size:14.5px;font-weight:500;}
   .nav-links a{text-decoration:none;color:var(--navy);position:relative;padding:4px 0;}
@@ -157,11 +157,12 @@
   .stars{color:var(--gold-soft);letter-spacing:2px;}
   .hero-card{
     position:relative;z-index:2;
-    background:rgba(255,255,255,0.06);
-    border:1px solid rgba(255,255,255,0.14);
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.18);
     border-radius:var(--radius);
     padding:28px;
-    backdrop-filter:blur(6px);
+    backdrop-filter:blur(8px);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,0.1), 0 8px 32px -8px rgba(15,36,56,0.25);
   }
   .hero-card h3{color:#fff;font-size:20px;margin-bottom:14px;}
   .hero-card ul{list-style:none;padding:0;margin:0;display:grid;gap:14px;}
@@ -175,7 +176,7 @@
   .trustbar .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:34px 24px;}
   @media (max-width:760px){ .trustbar .wrap{grid-template-columns:repeat(2,1fr);} }
   .trust-item{text-align:center;}
-  .trust-item .num{font-family:'Fraunces',serif;font-size:28px;color:var(--navy);font-weight:600;}
+  .trust-item .num{font-family:'Geist',sans-serif;font-size:28px;color:var(--navy);font-weight:600;}
   .trust-item .lbl{font-size:12.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-top:4px;}
 
   /* ---------- SECTION HEADS ---------- */
@@ -188,9 +189,10 @@
   @media (max-width:860px){ .about-grid{grid-template-columns:1fr;gap:36px;} }
   .highlights{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
   @media (max-width:520px){ .highlights{grid-template-columns:1fr;} }
-  .highlight-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;}
+  .highlight-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;}
+  .highlight-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px -6px rgba(46,108,100,0.12);border-color:var(--teal);}
   .highlight-card svg{color:var(--teal);margin-bottom:12px;}
-  .highlight-card h4{font-family:'Fraunces',serif;font-size:16.5px;color:var(--navy);margin:0 0 6px;font-weight:600;}
+  .highlight-card h4{font-family:'Geist',sans-serif;font-size:16.5px;color:var(--navy);margin:0 0 6px;font-weight:600;}
   .highlight-card p{font-size:13.5px;color:var(--muted);margin:0;line-height:1.5;}
   .about-copy p{font-size:16px;line-height:1.75;color:#3A424B;margin:0 0 16px;}
 
@@ -203,7 +205,7 @@
     border:1px solid var(--line);
     transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
   }
-  .service-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:transparent;}
+  .service-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px -8px rgba(15,36,56,0.2);border-color:var(--gold);}
   .service-icon{
     width:46px;height:46px;border-radius:12px;
     background:var(--teal-soft);color:var(--teal);
@@ -229,7 +231,9 @@
   .doctor-card{
     background:#fff;border:1px solid var(--line);border-radius:var(--radius);
     padding:28px;display:flex;gap:22px;
+    transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
   }
+  .doctor-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px -6px rgba(15,36,56,0.12);border-color:var(--gold);}
   @media (max-width:560px){ .doctor-card{flex-direction:column;} }
   .doctor-photo{
     flex:none;width:132px;height:132px;border-radius:14px;
@@ -238,7 +242,7 @@
     border:1px dashed var(--teal);
   }
   .doctor-photo span{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.04em;text-align:center;color:var(--teal);opacity:0.85;}
-  .doctor-info h3{font-size:19px;margin-bottom:4px;}
+  .doctor-info h3{font-family:'Geist',sans-serif;font-size:19px;margin-bottom:4px;}
   .doctor-role{font-size:13.5px;color:var(--gold);font-weight:600;margin:0 0 12px;}
   .doctor-creds{list-style:none;margin:0 0 12px;padding:0;display:grid;gap:6px;}
   .doctor-creds li{font-size:13.5px;color:var(--muted);padding-left:16px;position:relative;line-height:1.5;}
@@ -251,12 +255,14 @@
   @media (max-width:520px){ .gallery-grid{grid-template-columns:repeat(2,1fr);} }
   .gallery-tile{
     aspect-ratio:1/1;border-radius:14px;
-    background:#fff;border:1px dashed var(--line);
-    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
-    color:var(--muted);transition:border-color .18s ease, color .18s ease;
+    background:#fff;border:1px solid var(--line);
+    display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:0;
+    color:var(--muted);transition:border-color .18s ease, color .18s ease, transform .18s ease, box-shadow .18s ease;
+    position:relative;overflow:hidden;
   }
-  .gallery-tile:hover{border-color:var(--teal);color:var(--teal);}
-  .gallery-tile span{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.04em;text-align:center;padding:0 6px;}
+  .gallery-tile:hover{border-color:var(--teal);color:var(--teal);transform:translateY(-2px);box-shadow:0 6px 20px -6px rgba(46,108,100,0.15);}
+  .gallery-tile img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;position:absolute;inset:0;}
+  .gallery-tile span{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.04em;text-align:center;padding:8px 6px;background:linear-gradient(to top, rgba(0,0,0,0.6), transparent);color:#fff;position:relative;z-index:2;width:100%;}
   .gallery-note{margin-top:22px;font-size:13px;color:var(--muted);text-align:center;}
   .gallery-note code{background:#fff;padding:1px 6px;border-radius:4px;font-size:12px;border:1px solid var(--line);}
 
@@ -276,9 +282,11 @@
     background:rgba(255,255,255,0.07);
     border:1px solid rgba(255,255,255,0.16);
     border-radius:16px;padding:24px;
+    transition:transform .2s ease, border-color .2s ease;
   }
+  .skin-card:hover{transform:translateY(-2px);border-color:rgba(255,255,255,0.24);}
   .skin-card svg{color:var(--gold-soft);margin-bottom:14px;}
-  .skin-card h4{font-family:'Fraunces',serif;font-size:16.5px;font-weight:600;margin:0 0 8px;}
+  .skin-card h4{font-family:'Geist',sans-serif;font-size:16.5px;font-weight:600;margin:0 0 8px;}
   .skin-card p{font-size:13.5px;color:#CFD9D9;line-height:1.55;margin:0;}
   .skin-more{margin-top:26px;font-size:14px;color:#CFD9D9;}
   .skin-more a{color:var(--gold-soft);text-decoration:underline;text-underline-offset:3px;}
@@ -294,7 +302,9 @@
     scroll-snap-align:start;flex:0 0 320px;
     background:#fff;border:1px solid var(--line);border-radius:var(--radius);
     padding:26px;display:flex;flex-direction:column;gap:16px;
+    transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
   }
+  .testi-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px -6px rgba(15,36,56,0.12);border-color:var(--teal);}
   @media (max-width:400px){
     .testi-card{flex-basis:82vw;}
   }
@@ -305,7 +315,8 @@
 
   /* ---------- INSTAGRAM ---------- */
   .insta-head-row{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:36px;}
-  .insta-grid{display:flex;flex-wrap:nowrap;gap:20px;align-items:flex-start;justify-content:center;}
+  .insta-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;align-items:start;}
+  @media (max-width:900px){.insta-grid{grid-template-columns:1fr;}}
   .insta-embed{flex:1 1 auto;max-width:none;display:flex;justify-content:center;min-width:0;}
   .insta-embed iframe{border-radius:12px !important;}
   .insta-tile{
@@ -333,7 +344,7 @@
   .loc-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:32px;}
   .loc-row{display:flex;gap:14px;margin-bottom:22px;align-items:flex-start;}
   .loc-row svg{flex:none;color:var(--teal);margin-top:2px;}
-  .loc-row h4{font-family:'Fraunces',serif;font-size:15.5px;color:var(--navy);margin:0 0 4px;font-weight:600;}
+  .loc-row h4{font-family:'Geist',sans-serif;font-size:15.5px;color:var(--navy);margin:0 0 4px;font-weight:600;}
   .loc-row p{font-size:14.5px;color:var(--muted);margin:0;line-height:1.55;}
   .hours-table{width:100%;border-collapse:collapse;margin-top:4px;}
   .hours-table td{padding:4px 0;font-size:14px;color:#3A424B;}
@@ -361,7 +372,7 @@
   @media (max-width:760px){ .foot-grid{grid-template-columns:1fr;gap:28px;} }
   .foot-brand{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
   .foot-brand .brand-word{color:#fff;}
-  footer h5{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8393A3;margin:0 0 16px;}
+  footer h5{font-family:'Geist',sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#6B7280;margin:0 0 16px;}
   footer ul{list-style:none;padding:0;margin:0;display:grid;gap:10px;font-size:14.5px;}
   footer a{text-decoration:none;color:#CBD4DD;}
   footer a:hover{color:var(--gold-soft);}
@@ -450,21 +461,13 @@
               &amp; hair aesthetic treatments — all a two-minute walk from Sion
               Railway Station.</p>
             <div class="hero-ctas">
-              <a class="btn btn-primary"
-                href="https://wa.me/919082727843?text=Hi%20Dent-Aura%2C%20I%27d%20like%20to%20book%20an%20appointment."
-                target="_blank" rel="noopener">
-                <svg width="17" height="17" viewBox="0 0 24 24"
-                  fill="currentColor"><path
-                    d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.35 5.07L2 22l5.1-1.33A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.2 14.2c-.22.62-1.3 1.2-1.8 1.27-.46.07-1.03.1-1.66-.1-.38-.12-.87-.28-1.5-.56-2.64-1.14-4.36-3.8-4.5-3.98-.13-.18-1.08-1.44-1.08-2.75 0-1.3.68-1.94.92-2.2.24-.27.53-.33.7-.33h.5c.16 0 .38-.06.6.46.22.53.75 1.83.82 1.96.07.13.11.29.02.47-.09.18-.13.29-.26.44-.13.16-.28.35-.4.47-.13.13-.27.27-.12.53.16.27.7 1.16 1.51 1.88 1.04.93 1.92 1.22 2.19 1.36.27.13.42.11.58-.07.16-.18.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.53.72 1.79.85.27.13.45.2.51.31.07.13.07.71-.15 1.33z" /></svg>
-                Book on WhatsApp
-              </a>
               <a class="btn btn-ghost"
                 style="color:#fff;border-color:rgba(255,255,255,0.35);"
                 href="tel:+919082727843">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2"><path
                     d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" /></svg>
-                Call 090827 27843
+                Call us
               </a>
             </div>
             <div class="rating-strip">
@@ -765,7 +768,6 @@
       <section id="doctors">
         <div class="wrap">
           <div class="section-head">
-            <div class="eyebrow reveal">Meet the team</div>
             <h2 class="reveal">The doctors treating you</h2>
             <p class="reveal">Two dentists, two areas of focus — general &amp;
               cosmetic dentistry, and skin &amp; hair aesthetics.</p>
@@ -820,9 +822,8 @@
       <section id="about">
         <div class="wrap about-grid">
           <div>
-            <div class="eyebrow reveal">Why patients choose us</div>
             <h2 class="reveal"
-              style="font-size:clamp(26px,3vw,34px);margin-top:14px;">Dentistry
+              style="font-size:clamp(26px,3vw,34px);">Dentistry
               that explains itself, in a clinic built to feel calm</h2>
             <div class="about-copy reveal" style="margin-top:20px;">
               <p>Dent-Aura Dental And Cosmetic Clinic is a multi-speciality
@@ -928,7 +929,6 @@
       <section id="testimonials">
         <div class="wrap">
           <div class="section-head">
-            <div class="eyebrow reveal">Patient testimonials</div>
             <h2 class="reveal">What patients say after visiting</h2>
             <p class="reveal">A few notes from our Google reviews. Swap these
               for your latest quotes any time — see the note in the site
@@ -1012,15 +1012,6 @@
             </div>
           </div>
 
-          <p class="insta-embed-note">
-            <strong>How to add more posts:</strong> open the post on <a
-              href="https://www.instagram.com/dentaura_32/" target="_blank"
-              rel="noopener">instagram.com</a> → click the <code>···</code> menu
-            → <code>Embed</code> → copy the code Instagram gives you → paste it
-            in place of one of the "Add another post here" tiles in
-            <code>index.html</code>. This uses Instagram's own free embed — no
-            account, widget service, or view limits involved.
-          </p>
         </div>
       </section>
 
@@ -1028,7 +1019,6 @@
       <section id="location">
         <div class="wrap">
           <div class="section-head">
-            <div class="eyebrow reveal">Find us</div>
             <h2 class="reveal">Right by Sion Railway Station</h2>
           </div>
           <div class="loc-grid">
@@ -1062,10 +1052,6 @@
                   </table>
                 </div>
               </div>
-              <p
-                style="font-size:12px;color:var(--muted);margin-top:8px;">*Placeholder
-                hours — please confirm your exact timings and update this
-                section.</p>
               <a class="btn btn-primary"
                 style="width:100%;justify-content:center;margin-top:12px;"
                 href="https://www.google.com/maps/search/?api=1&query=Dent-Aura+Dental+And+Cosmetic+Clinic+Sion+Mumbai"
@@ -1093,16 +1079,25 @@
               <g class="aura-rotate-rev"><circle class="ring3" cx="320" cy="320"
                   r="160" /></g>
             </svg>
-            <h2>Ready to fix that appointment?</h2>
-            <p>Message us on WhatsApp with what's bothering you — we'll suggest
-              the right next step and a time that works.</p>
+            <h2>Ready for your appointment?</h2>
+            <p>Whether it's a routine check-up or a full smile makeover — reach out on WhatsApp or call us to book your visit today.</p>
             <div class="cta-actions">
               <a class="btn btn-primary"
                 href="https://wa.me/919082727843?text=Hi%20Dent-Aura%2C%20I%27d%20like%20to%20book%20an%20appointment."
-                target="_blank" rel="noopener">Book on WhatsApp</a>
+                target="_blank" rel="noopener">
+                <svg width="17" height="17" viewBox="0 0 24 24"
+                  fill="currentColor"><path
+                    d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.35 5.07L2 22l5.1-1.33A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.2 14.2c-.22.62-1.3 1.2-1.8 1.27-.46.07-1.03.1-1.66-.1-.38-.12-.87-.28-1.5-.56-2.64-1.14-4.36-3.8-4.5-3.98-.13-.18-1.08-1.44-1.08-2.75 0-1.3.68-1.94.92-2.2.24-.27.53-.33.7-.33h.5c.16 0 .38-.06.6.46.22.53.75 1.83.82 1.96.07.13.11.29.02.47-.09.18-.13.29-.26.44-.13.16-.28.35-.4.47-.13.13-.27.27-.12.53.16.27.7 1.16 1.51 1.88 1.04.93 1.92 1.22 2.19 1.36.27.13.42.11.58-.07.16-.18.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.53.72 1.79.85.27.13.45.2.51.31.07.13.07.71-.15 1.33z" /></svg>
+                Message on WhatsApp
+              </a>
               <a class="btn btn-ghost"
                 style="color:#fff;border-color:rgba(255,255,255,0.35);"
-                href="tel:+919082727843">Call the clinic</a>
+                href="tel:+919082727843">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2"><path
+                    d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" /></svg>
+                Call us
+              </a>
             </div>
           </div>
         </div>
