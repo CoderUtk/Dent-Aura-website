@@ -1,0 +1,24 @@
+[build]
+  publish = "."
+
+# Serve /services/root-canal-treatment without the .html extension
+[build.processing]
+  skip_processing = false
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Enforce a single canonical host: strip www, force apex on the Netlify domain
+[[redirects]]
+  from = "https://www.dent-aura-mumbai.netlify.app/*"
+  to = "https://dent-aura-mumbai.netlify.app/:splat"
+  status = 301
+  force = true

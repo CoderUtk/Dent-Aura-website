@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Build sources, not pages — the rendered versions live at /services, /fees, /contact
+Disallow: /scripts/
+
+Sitemap: https://dent-aura-mumbai.netlify.app/sitemap.xml

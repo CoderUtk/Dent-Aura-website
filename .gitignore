@@ -1,0 +1,8 @@
+# Local agent/tool state — never part of the deployed site
+.claude/
+.tokensave/
+
+# OS cruft
+.DS_Store
+Thumbs.db
+desktop.ini
