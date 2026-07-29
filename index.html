@@ -15,15 +15,18 @@
       content="Dental &amp; cosmetic clinic in Sion, Mumbai — check-ups, root canal, implants, braces, whitening, plus skin &amp; hair aesthetics. 5.0★ on Google.">
     <meta property="og:url" content="https://dent-aura-mumbai.netlify.app/">
     <meta property="og:image"
-      content="https://dent-aura-mumbai.netlify.app/assets/exterior.png">
+      content="https://dent-aura-mumbai.netlify.app/assets/img/og-card.jpg">
     <meta property="og:image:alt" content="Dent-Aura Dental and Cosmetic Clinic, Sion, Mumbai">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
     <meta property="og:locale" content="en_IN">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Dent-Aura Dental &amp; Cosmetic Clinic | Sion, Mumbai">
     <meta name="twitter:description"
       content="Dental &amp; cosmetic clinic in Sion, Mumbai. 5.0★ on Google. Book on WhatsApp.">
     <meta name="twitter:image"
-      content="https://dent-aura-mumbai.netlify.app/assets/exterior.png">
+      content="https://dent-aura-mumbai.netlify.app/assets/img/og-card.jpg">
 
     <script type="application/ld+json">
     {
@@ -32,7 +35,13 @@
       "@id": "https://dent-aura-mumbai.netlify.app/#clinic",
       "name": "Dent-Aura Dental And Cosmetic Clinic",
       "url": "https://dent-aura-mumbai.netlify.app/",
-      "image": "https://dent-aura-mumbai.netlify.app/assets/exterior.png",
+      "image": [
+        "https://dent-aura-mumbai.netlify.app/assets/img/og-card.jpg",
+        "https://dent-aura-mumbai.netlify.app/assets/img/exterior.jpg",
+        "https://dent-aura-mumbai.netlify.app/assets/img/reception.jpg",
+        "https://dent-aura-mumbai.netlify.app/assets/img/treatment.jpg",
+        "https://dent-aura-mumbai.netlify.app/assets/img/waiting.jpg"
+      ],
       "logo": "https://dent-aura-mumbai.netlify.app/assets/logo.jpg",
       "telephone": "+91-90827-27843",
       "address": {
@@ -90,9 +99,10 @@
     <link rel="apple-touch-icon" href="/assets/logo.jpg">
     <meta name="theme-color" content="#0F2438">
     <meta name="color-scheme" content="light">
-    <link rel="preconnect" href="https://images.unsplash.com">
     <link rel="preload" as="image" fetchpriority="high"
-      href="https://images.unsplash.com/photo-1677026010083-78ec7f1b84ed?auto=format&amp;fit=crop&amp;w=1200&amp;q=80">
+      href="/assets/img/treatment.jpg"
+      imagesrcset="/assets/img/treatment-400.webp 400w, /assets/img/treatment-800.webp 800w, /assets/img/treatment-1195.webp 1195w"
+      imagesizes="(max-width:900px) 92vw, 46vw">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -191,8 +201,14 @@
           </div>
           <div class="hero-visual hero-anim hero-anim-3">
           <div class="hero-photo">
-            <img src="https://images.unsplash.com/photo-1677026010083-78ec7f1b84ed?auto=format&fit=crop&w=1200&q=80" alt="Close-up of a bright, healthy smile" loading="eager"
-              fetchpriority="high" width="1200" height="800">
+            <picture>
+              <source type="image/webp" sizes="(max-width:900px) 92vw, 46vw"
+                srcset="/assets/img/treatment-400.webp 400w, /assets/img/treatment-800.webp 800w, /assets/img/treatment-1195.webp 1195w">
+              <img src="/assets/img/treatment.jpg"
+                alt="Treatment room at Dent-Aura Dental and Cosmetic Clinic in Sion, Mumbai, with dental chair and equipment"
+                loading="eager" fetchpriority="high" decoding="async"
+                width="1195" height="896">
+            </picture>
             <div class="glass-badge" aria-hidden="true">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <g class="glass-tooth">
@@ -505,9 +521,13 @@
 
             <div class="doctor-card reveal">
               <div class="doctor-photo">
-                <img src="/assets/jyotiGupta.jpeg"
-                  alt="Dr. Jyoti Gupta"
-                  loading="lazy">
+                <picture>
+                  <source type="image/webp" sizes="132px"
+                    srcset="/assets/img/dr-jyoti-gupta-400.webp 400w, /assets/img/dr-jyoti-gupta-800.webp 800w, /assets/img/dr-jyoti-gupta-1200.webp 1200w">
+                  <img src="/assets/img/dr-jyoti-gupta.jpg"
+                    alt="Dr. Jyoti Gupta, BDS, dentist and cosmetologist at Dent-Aura, Sion"
+                    loading="lazy" decoding="async" width="2032" height="1744">
+                </picture>
               </div>
               <div class="doctor-info">
                 <h3>Dr. Jyoti Gupta</h3>
@@ -525,9 +545,13 @@
 
             <div class="doctor-card reveal">
               <div class="doctor-photo">
-                <img src="/assets/laxmigupta.jpeg"
-                  alt="Dr. Laxmi Gupta"
-                  loading="lazy">
+                <picture>
+                  <source type="image/webp" sizes="132px"
+                    srcset="/assets/img/dr-laxmi-gupta-400.webp 400w, /assets/img/dr-laxmi-gupta-667.webp 667w">
+                  <img src="/assets/img/dr-laxmi-gupta.jpg"
+                    alt="Dr. Laxmi Gupta, BDS, dentist at Dent-Aura, Sion"
+                    loading="lazy" decoding="async" width="667" height="725">
+                </picture>
               </div>
               <div class="doctor-info">
                 <h3>Dr. Laxmi Gupta</h3>
@@ -613,39 +637,63 @@
           </div>
           <div class="gallery-grid">
             <div class="gallery-tile reveal">
-              <img src="/assets/exterior.png"
-                alt="Street view of the Dent-Aura clinic exterior"
-                loading="lazy">
-              <span>Clinic exterior</span>
+              <picture>
+                <source type="image/webp" sizes="(max-width:520px) 45vw, (max-width:920px) 30vw, 16vw"
+                  srcset="/assets/img/exterior-400.webp 400w, /assets/img/exterior-800.webp 800w, /assets/img/exterior-896.webp 896w">
+                <img src="/assets/img/exterior.jpg"
+                  alt="Staircase up to Dent-Aura in Sion, with dental health tips printed on the steps"
+                  loading="lazy" decoding="async" width="896" height="1195">
+              </picture>
+              <span>Stairs up to the clinic</span>
             </div>
             <div class="gallery-tile reveal">
-              <img src="/assets/reception.png"
-                alt="Dent-Aura reception desk and waiting area"
-                loading="lazy">
+              <picture>
+                <source type="image/webp" sizes="(max-width:520px) 45vw, (max-width:920px) 30vw, 16vw"
+                  srcset="/assets/img/reception-400.webp 400w, /assets/img/reception-800.webp 800w, /assets/img/reception-896.webp 896w">
+                <img src="/assets/img/reception.jpg"
+                  alt="Dent-Aura reception desk and waiting area"
+                  loading="lazy" decoding="async" width="896" height="1195">
+              </picture>
               <span>Reception</span>
             </div>
             <div class="gallery-tile reveal">
-              <img src="/assets/treatment.png"
-                alt="Treatment room with dental chair and equipment"
-                loading="lazy">
+              <picture>
+                <source type="image/webp" sizes="(max-width:520px) 45vw, (max-width:920px) 30vw, 16vw"
+                  srcset="/assets/img/treatment-400.webp 400w, /assets/img/treatment-800.webp 800w, /assets/img/treatment-1195.webp 1195w">
+                <img src="/assets/img/treatment.jpg"
+                  alt="Treatment room with dental chair and equipment"
+                  loading="lazy" decoding="async" width="1195" height="896">
+              </picture>
               <span>Treatment room</span>
             </div>
             <div class="gallery-tile reveal">
-              <img src="/assets/waiting.png"
-                alt="Patient waiting room seating at Dent-Aura"
-                loading="lazy">
+              <picture>
+                <source type="image/webp" sizes="(max-width:520px) 45vw, (max-width:920px) 30vw, 16vw"
+                  srcset="/assets/img/waiting-400.webp 400w, /assets/img/waiting-800.webp 800w, /assets/img/waiting-1195.webp 1195w">
+                <img src="/assets/img/waiting.jpg"
+                  alt="Patient waiting room seating at Dent-Aura"
+                  loading="lazy" decoding="async" width="1195" height="896">
+              </picture>
               <span>Waiting room</span>
             </div>
             <div class="gallery-tile reveal">
-              <img src="/assets/exterior2.png"
-                alt="Entrance to Dent-Aura Dental and Cosmetic Clinic"
-                loading="lazy">
-              <span>Entrance</span>
+              <picture>
+                <source type="image/webp" sizes="(max-width:520px) 45vw, (max-width:920px) 30vw, 16vw"
+                  srcset="/assets/img/exterior2-400.webp 400w, /assets/img/exterior2-800.webp 800w, /assets/img/exterior2-896.webp 896w">
+                <img src="/assets/img/exterior2.jpg"
+                  alt="Corridor inside Dent-Aura in Sion, with a board explaining the treatments offered"
+                  loading="lazy" decoding="async" width="896" height="1200">
+              </picture>
+              <span>Inside the clinic</span>
             </div>
             <div class="gallery-tile reveal">
-              <img src="/assets/Consultation.png"
-                alt="Consultation room where treatment plans are discussed"
-                loading="lazy">
+              <picture>
+                <source type="image/webp" sizes="(max-width:520px) 45vw, (max-width:920px) 30vw, 16vw"
+                  srcset="/assets/img/consultation-400.webp 400w, /assets/img/consultation-800.webp 800w, /assets/img/consultation-896.webp 896w">
+                <img src="/assets/img/consultation.jpg"
+                  alt="Consultation room where treatment plans are discussed"
+                  loading="lazy" decoding="async" width="896" height="1195">
+              </picture>
               <span>Consultation room</span>
             </div>
           </div>

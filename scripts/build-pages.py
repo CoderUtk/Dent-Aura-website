@@ -17,7 +17,7 @@ PARTIALS = os.path.join(ROOT, "scripts", "pages")
 
 SITE = "https://dent-aura-mumbai.netlify.app"
 CLINIC_ID = SITE + "/#clinic"
-OG_IMAGE = SITE + "/assets/exterior.png"
+OG_IMAGE = SITE + "/assets/img/og-card.jpg"  # 1200x630, built by scripts/build-images.py
 WA = ("https://wa.me/919082727843?text=Hi%20Dent-Aura%2C%20I%27d%20like%20to"
       "%20book%20an%20appointment.")
 TEL = "+919082727843"
@@ -56,6 +56,9 @@ SHELL = """<!DOCTYPE html>
     <meta property="og:url" content="{canonical}">
     <meta property="og:image" content="{og_image}">
     <meta property="og:image:alt" content="Dent-Aura Dental and Cosmetic Clinic, Sion, Mumbai">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
     <meta property="og:locale" content="en_IN">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{og_title}">
@@ -249,6 +252,44 @@ PAGES = [
 ]
 
 
+MANIFEST = json.load(io.open(
+    os.path.join(ROOT, "assets", "img", "manifest.json"), encoding="utf-8"))
+
+# Partials write [[photo:stem|alt text|caption]] and get a responsive <figure>.
+# Run scripts/build-images.py first — the widths come from its manifest.
+PHOTO = re.compile(
+    r"^(?P<indent>[ \t]*)\[\[photo:(?P<stem>[a-z0-9-]+)\|(?P<alt>[^|\]]+)"
+    r"\|(?P<caption>[^\]]*)\]\]$", re.M)
+
+FIGURE_SIZES = "(max-width:900px) 92vw, 640px"
+
+
+def expand_photos(body):
+    def repl(m):
+        stem = m.group("stem")
+        if stem not in MANIFEST:
+            raise SystemExit("unknown photo %r — run scripts/build-images.py" % stem)
+        info = MANIFEST[stem]
+        i = m.group("indent")
+        srcset = ", ".join("/assets/img/%s-%d.webp %dw" % (stem, w, w)
+                           for w in info["widths"])
+        caption = m.group("caption").strip()
+        cap = ("\n{i}  <figcaption>{c}</figcaption>".format(i=i, c=caption)) if caption else ""
+        return (
+            '{i}<figure class="figure-shot">\n'
+            '{i}  <picture>\n'
+            '{i}    <source type="image/webp" sizes="{sizes}"\n'
+            '{i}      srcset="{srcset}">\n'
+            '{i}    <img src="/assets/img/{stem}.jpg" alt="{alt}"\n'
+            '{i}      loading="lazy" decoding="async" width="{w}" height="{h}">\n'
+            '{i}  </picture>{cap}\n'
+            '{i}</figure>'
+        ).format(i=i, sizes=FIGURE_SIZES, srcset=srcset, stem=stem,
+                 alt=m.group("alt").strip(), w=info["width"], h=info["height"], cap=cap)
+
+    return PHOTO.sub(repl, body)
+
+
 def strip_tags(text):
     """Schema values must be plain text, not HTML entities."""
     return (text.replace("&amp;", "&").replace("&mdash;", "—")
@@ -336,7 +377,7 @@ def main():
     written = []
     for page in PAGES:
         src = os.path.join(PARTIALS, page["partial"] + ".html")
-        page["_body"] = io.open(src, encoding="utf-8").read().rstrip("\n")
+        page["_body"] = expand_photos(io.open(src, encoding="utf-8").read().rstrip("\n"))
         page["_schema"] = build_schema(page)
 
         dest = os.path.join(ROOT, page["out"])

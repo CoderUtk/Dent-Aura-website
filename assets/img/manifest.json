@@ -1,0 +1,73 @@
+{
+  "consultation": {
+    "height": 1195,
+    "width": 896,
+    "widths": [
+      400,
+      800,
+      896
+    ]
+  },
+  "dr-jyoti-gupta": {
+    "height": 1744,
+    "width": 2032,
+    "widths": [
+      400,
+      800,
+      1200
+    ]
+  },
+  "dr-laxmi-gupta": {
+    "height": 725,
+    "width": 667,
+    "widths": [
+      400,
+      667
+    ]
+  },
+  "exterior": {
+    "height": 1195,
+    "width": 896,
+    "widths": [
+      400,
+      800,
+      896
+    ]
+  },
+  "exterior2": {
+    "height": 1200,
+    "width": 896,
+    "widths": [
+      400,
+      800,
+      896
+    ]
+  },
+  "reception": {
+    "height": 1195,
+    "width": 896,
+    "widths": [
+      400,
+      800,
+      896
+    ]
+  },
+  "treatment": {
+    "height": 896,
+    "width": 1195,
+    "widths": [
+      400,
+      800,
+      1195
+    ]
+  },
+  "waiting": {
+    "height": 896,
+    "width": 1195,
+    "widths": [
+      400,
+      800,
+      1195
+    ]
+  }
+}
